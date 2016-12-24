@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Week2 Assignment: Shopping List Check-off</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <!--<link rel="stylesheet" href="css/main.css"> -->
+        <script type="text/javascript" src="angular.js"></script>
+    </head>
+    <body ng-app="ShoppingListCheckOff">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <h1>Week2 Assignment: Shopping List Check Off</h1>
+		<div ng-controller="ToBuyController as list1">
+			<h1>Shopping List to buy from {You can have your cake (add items to buy) and eat it too (buy them)}:</h1>		Add Items:
+					<input type="text" ng-model="list1.qty" placeholder="quantity">
+					<input type="text" ng-model="list1.name" placeholder="name">	
+					<button ng-if="list1.name && list1.qty" ng-click="list1.addItem(list1.name, list1.qty)">Add</button>
+			<ul>
+				<li ng-repeat="item in list1.buyList">
+					Buy {{item.qty }} {{item.name}}
+					<button ng-click="list1.removeItem($index)">Buy</button>
+				</li>
+
+			</ul>
+			<div ng-if="list1.isListEmpty()">Everything is bought!</div>
+		</div>
+		<div ng-controller="AlreadyBoughtController as list2">
+			<h1>Bought Shopping List</h1>
+			<ul>
+				<li ng-repeat="item in list2.boughtList">
+					Bought {{item.qty}} {{item.name}}
+				</li>
+			</ul>
+			<div ng-if="list2.isListEmpty()">Nothing bought yet!</div>
+		</div>
+		<script type="text/javascript" src="app.js"></script>
+        <!--
+        <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\/script>')</script>
+        -->
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <!--
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        -->
+    </body>
+</html>
