@@ -48,10 +48,28 @@
 // 	function ShoppingListCheckOffService(){
 // 		var service = this;
 
-// 		var buyList = [{
+// 		var buyList = [
+// 		{
 // 			'name': 'cookies',
 // 			'qty': 5
-// 		}];
+// 		},
+// 		{
+// 			'name': 'apples',
+// 			'qty': 4
+// 		},
+// 		{
+// 			'name': 'chips',
+// 			'qty': 10
+// 		},
+// 		{
+// 			'name': 'pizzas',
+// 			'qty': 15
+// 		},
+// 		{
+// 			'name': 'burgers',
+// 			'qty': 5
+// 		}
+// 		];
 
 // 		var boughtList = [];
 
@@ -76,4 +94,4 @@
 // 	} 
 // })();
 
-!function(){function t(t){var e=this;e.name="",e.qty="",e.buyList=t.getBuyItems(),e.addItem=function(n,i){var o={name:n,qty:i};t.addBuyItem(o),e.name="",e.qty=""},e.removeItem=function(e){t.removeBuyItem(e)},e.isListEmpty=function(){return 0==e.buyList.length?!0:!1}}function e(t){var e=this;e.boughtList=t.getBoughtItems(),e.isListEmpty=function(){return 0==e.boughtList.length?!0:!1}}function n(){var t=this,e=[{name:"cookies",qty:5}],n=[];return t.getBuyItems=function(){return e},t.getBoughtItems=function(){return n},t.addBuyItem=function(t){e.push(t)},t.removeBuyItem=function(t){var i=e.splice(t,1);n.push(i[0])},t}angular.module("ShoppingListCheckOff",[]).controller("ToBuyController",t).controller("AlreadyBoughtController",e).service("ShoppingListCheckOffService",n),t.$inject=["ShoppingListCheckOffService"],e.$inject=["ShoppingListCheckOffService"]}();
+!function(){function t(t){var e=this;e.name="",e.qty="",e.buyList=t.getBuyItems(),e.addItem=function(n,i){var o={name:n,qty:i};t.addBuyItem(o),e.name="",e.qty=""},e.removeItem=function(e){t.removeBuyItem(e)},e.isListEmpty=function(){return 0==e.buyList.length?!0:!1}}function e(t){var e=this;e.boughtList=t.getBoughtItems(),e.isListEmpty=function(){return 0==e.boughtList.length?!0:!1}}function n(){var t=this,e=[{name:"cookies",qty:5},{name:"apples",qty:4},{name:"chips",qty:10},{name:"pizzas",qty:15},{name:"burgers",qty:5}],n=[];return t.getBuyItems=function(){return e},t.getBoughtItems=function(){return n},t.addBuyItem=function(t){e.push(t)},t.removeBuyItem=function(t){var i=e.splice(t,1);n.push(i[0])},t}angular.module("ShoppingListCheckOff",[]).controller("ToBuyController",t).controller("AlreadyBoughtController",e).service("ShoppingListCheckOffService",n),t.$inject=["ShoppingListCheckOffService"],e.$inject=["ShoppingListCheckOffService"]}();
