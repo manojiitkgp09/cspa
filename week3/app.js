@@ -50,7 +50,7 @@
 				var found = []
 				var menu_items = result.data.menu_items;
 				for (var i=0;i<menu_items.length;i++){
-					if (menu_items[i].description.match(searchTerm.toLowerCase())) {
+					if (searchTerm != "" && menu_items[i].description.match(searchTerm.toLowerCase())) {
 						found.push(menu_items[i]);
 					}
 				}
